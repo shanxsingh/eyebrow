@@ -1,38 +1,186 @@
+body {
+  font-family: 'Merienda'; /* Use Merienda font */
+  margin: 0;
+  color: black;
+  background-color: #f9f9f9; /* Set a light background for the main content */
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navigation Bar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+  padding: 25px 0; /* Increased padding for a thicker navbar */
+  z-index: 100;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: purple;
+}
+
+/* Yelp Link in Navbar */
+.yelp-link {
+  margin-left: 30px; /* Add some space between the nav links and the Yelp link */
+  font-size: 1.2em;
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.yelp-link:hover {
+  color: purple;
+  transform: scale(1.1);
+}
+
+/* Hero Section Styles */
+#hero-section {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  background-image: url('https://currentbynese.com/wp-content/uploads/2023/01/eyebrow-threading.jpeg'); /* Background image */
+  background-size: cover; /* Cover the entire section */
+  background-position: center; /* Center the image */
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px; /* Padding to avoid overlap with navbar */
 }
 
-.App-link {
-  color: #61dafb;
+.hero-content {
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+/* Main Content Section */
+#main-content {
+  background-color: white;
+  padding: 50px 20px;
+  min-height: 100vh; /* Full height for scrolling */
+}
+
+section {
+  margin: 10px;
+  padding: 20px;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.5em;
+}
+
+/* Services List */
+#services ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+#services li {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+/* Price List */
+#price-list {
+  text-align: center;
+}
+
+#price-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#price-list li {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+h3 {
+  text-decoration: underline;
+  margin: 10px 0;
+}
+
+/* Location Styles */
+#location a {
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 0.8em;
+}
+
+#location a:hover {
+  color: purple;
+  transform: scale(1.1);
+}
+
+/* Contact Links */
+.contact-link {
+  color: blue;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+  font-size: 0.8em;
+}
+
+.contact-link:hover {
+  color: purple;
+  transform: scale(1.1);
+}
+
+/* Footer Yelp Link */
+.yelp-link:active, .contact-link:active {
+  color: purple;
+}
+
+/* Background Image Blur for Hero Section */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('https://currentbynese.com/wp-content/uploads/2023/01/eyebrow-threading.jpeg');
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+html, body {
+  height: 100%;
+  overflow-y: auto;
 }
