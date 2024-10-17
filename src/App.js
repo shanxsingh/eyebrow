@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="App">
       {/* Navigation Bar */}
       <nav className="navbar">
-        <ul className="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#price-list">Price List</a></li>
-          <li><a href="#location">Location</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#about">About Me</a></li>
+        <div className="menu-icon" onClick={toggleMenu}>
+          ☰ {/* Hamburger icon */}
+        </div>
+        <ul className={`nav-links ${isOpen ? 'open' : ''}`}>
+          <li><a href="#services" onClick={toggleMenu}>Services</a></li>
+          <li><a href="#price-list" onClick={toggleMenu}>Price List</a></li>
+          <li><a href="#location" onClick={toggleMenu}>Location</a></li>
+          <li><a href="#contact" onClick={toggleMenu}>Contact</a></li>
+          <li><a href="#about" onClick={toggleMenu}>About Me</a></li>
         </ul>
         {/* Yelp Link inside Navbar */}
         <a
@@ -27,7 +36,7 @@ function App() {
       {/* Hero Section */}
       <section id="hero-section">
         <div className="hero-content">
-          <h1>Raj's Eyebrow Threading and Waxing</h1>
+          <h1>Rajvir's Eyebrow Threading and Waxing</h1>
         </div>
       </section>
 
@@ -92,7 +101,7 @@ function App() {
 
         {/* Contact */}
         <section id="contact">
-          <h2>Contact</h2>
+          <h2>Contact (Appointments Only)</h2>
           <p>
             Phone: <a href="tel:2092072718" className="contact-link">209-207-2718</a>
           </p>
@@ -104,7 +113,7 @@ function App() {
         {/* About Me */}
         <section id="about">
           <h2>About Me</h2>
-          <p>Raj has been a certified expert esthetician in eyebrow threading for over 10 years. She offers professional and personalized services to all her clients.</p>
+          <p>Raj has been a certified expert esthetician in eyebrow threading for over 10 years. She offers professional and friendly personalized services to all her clients.</p>
         </section>
       </section>
     </div>
